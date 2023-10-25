@@ -14,9 +14,13 @@ public class RecursiveMethods {
 	public static double geometricSum(int n) {
 		
 			// FIXME compute the geometric sum for the first n terms recursively
+		if (n == 0) {
 			return 0;
-		
-	}
+		}
+			
+		return  Math.pow(0.5, n) + geometricSum(n-1);
+			
+		}
 
 	/**
 	 * This method uses recursion to compute the greatest common divisor
@@ -42,10 +46,25 @@ public class RecursiveMethods {
 	 * @return an array with the same data as the input but it reverse order
 	 */
 	public static int[] toReversed(int[] array) {
+		int[] reversed = new int[array.length];
 		
-			// FIXME create a helper method that can recursively reverse the given array
-			return new int[0];
+		helperMethod(array, 0, reversed);
+		return reversed; 
 		
+		
+	}
+	
+	public static int[] helperMethod(int[] array, int index, int[] reversed) {
+		int lastInt = array.length-1;
+		if (lastInt > array.length/2) {
+			return array;
+		}
+		
+		reversed[index] = array[lastInt-index];
+		reversed[lastInt-index]  = array[index];
+		index++;
+		
+		return reversed;
 	}
 
 	/**

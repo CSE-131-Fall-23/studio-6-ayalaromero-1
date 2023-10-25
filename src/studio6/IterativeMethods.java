@@ -14,11 +14,18 @@ public class IterativeMethods {
 	 */
 	public static double geometricSum(int n) {
 		double sum = 0.0;
+		
 		for (int power = 1; power <= n; ++power) {
 			sum = sum + Math.pow(0.5, power);
 		}
 		return sum;
+		
+	
 	}
+	
+	
+	
+	
 
 	/**
 	 * @param p first operand
@@ -42,6 +49,7 @@ public class IterativeMethods {
 		int[] reversed = new int[array.length];
 		if (array.length > 0) {
 			int lastIndex = array.length - 1;
+			
 			for (int index = 0; index <= array.length / 2; ++index) {
 				int mirrorIndex = lastIndex - index;
 				// note:
